@@ -15,7 +15,7 @@ async function digestMessage(message: string) {
   }
 }
 
-export const generateSignature = async(payload: AuthPayload) => {
+export const generateSignature = async (payload: AuthPayload) => {
   const { t: timestamp, m: lastMessage } = payload
   const secretKey = import.meta.env.PUBLIC_SECRET_KEY as string || ''
   const signText = `${timestamp}:${lastMessage}:${secretKey}`
@@ -23,7 +23,7 @@ export const generateSignature = async(payload: AuthPayload) => {
   return await digestMessage(signText)
 }
 
-export const verifySignature = async(payload: AuthPayload, sign: string) => {
+export const verifySignature = async (payload: AuthPayload, sign: string) => {
   // if (Math.abs(payload.t - Date.now()) > 1000 * 60 * 5) {
   //   return false
   // }

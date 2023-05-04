@@ -1,9 +1,9 @@
 version: '3'
 
 services:
-  chatgpt-demo:
-    image: ddiu8081/chatgpt-demo:latest
-    container_name: chatgpt-demo
+  chatgpt-MVP:
+    image: minion550/chatgpt-MVP:latest
+    container_name: chatgpt-MVP
     restart: always
     ports:
         - "3000:3000"
